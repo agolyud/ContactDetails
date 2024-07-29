@@ -14,6 +14,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
@@ -64,11 +65,11 @@ fun ContactDetails(contact: Contact, modifier: Modifier = Modifier) {
         NameRow(name = contact.name, surname = contact.surname)
         FamilyNameRow(familyName = contact.familyName, isFavorite = contact.isFavorite)
 
-        InfoRow(label = "Телефон", value = contact.phone.ifEmpty { "---" })
-        InfoRow(label = "Адрес", value = contact.address)
+        InfoRow(label = stringResource(R.string.phone), value = contact.phone.ifEmpty { "---" })
+        InfoRow(label = stringResource(R.string.address), value = contact.address)
 
         contact.email?.let {
-            InfoRow(label = "E-mail", value = it)
+            InfoRow(label = stringResource(R.string.email), value = it)
         }
     }
 }
